@@ -1,6 +1,7 @@
 from PIL import Image
 import math
 from sys import argv
+import os
 
 if(len(argv) < 2):
     print(f"No file specified. Usage: {argv[0]} <raw latt binary (.rlatt)>")
@@ -21,4 +22,4 @@ for y in range(widthheight):
         c = code[y*widthheight+x]
         finished.paste(arrow.copy().rotate(360 - c * 15), (x * 128, y * 128))
 
-finished.save('finished.png')
+finished.save(os.path.splitext(argv[1])[0] + ".png")
