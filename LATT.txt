@@ -1,0 +1,34 @@
+mnemonic    - i  - description
+
+CLEAR       - 00 - clear at ptr
+INC         - 01 - increment val by 1
+RET         - 02 - exit program and return value at pointer as return code
+DEC         - 03 - decrement val by 1
+???         - 04 - unused
+
+PINC        - 05 - increment pointer by 1
+PDEC        - 06 - decrement pointer by 1
+
+LOAD        - 07 - load into slot
+PUT         - 08 - set val to slot
+CLSLOT      - 09 - clear slot
+QLOAD       - 10 - quick load slot from values[0] (nobody will ever use this lol)
+
+ISZERO      - 11 - flag = (val == 0)
+
+LSTART      - 12 - loop start
+
+ISEQU       - 13 - flag = (val == slot)
+ISNEQ       - 14 - flag = (val != slot)
+ISGRE       - 15 - flag = (val >  slot)
+ISLES       - 16 - flag = (val <  slot)
+
+SLOT0       - 17 - switch to slot 0
+SLOT1       - 18 - switch to slot 1
+SLOT2       - 19 - switch to slot 2
+SLOT3       - 20 - switch to slot 3
+
+OUT         - 21 - print val to stdout as ascii character (72 = 'H')
+NOOP        - 22 - noop
+
+LEND        - 23 - loop end, pass if flag = 1, else, jump back to the first loop start in the stack

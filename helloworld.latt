@@ -1,0 +1,90 @@
+# Simple hello world (i'm sure some smart person can make this shorter)
+
+# Working up to the letter 'H' which we will use as the base for all other letters
+# Using an asterisk after a mnemonic will repeat the instruction X times. Only valid in (dis)assembly
+INC * 9
+LSTART
+    PINC
+    INC * 8
+    PDEC
+    DEC
+    ISZERO
+LEND
+
+PINC
+# Load our 'H' into slot 0
+SLOT0
+LOAD
+
+# E
+PINC
+PUT
+DEC * 3
+
+# L
+PINC
+PUT
+INC * 4
+# load this L into slot1 for later use
+SLOT1
+LOAD
+
+# Second L
+PINC
+PUT
+
+# O
+PINC
+PUT
+INC * 3
+SLOT2
+LOAD
+
+# Space
+PINC * 2
+INC * 8
+LSTART
+    PDEC
+    INC * 4
+    PINC
+    DEC
+    ISZERO
+LEND
+PDEC
+
+# W
+PINC
+PUT
+INC * 8
+
+# O
+PINC
+PUT
+
+# R
+PINC
+PUT
+INC * 3
+
+# L
+PINC
+SLOT1
+PUT
+
+# D
+PINC
+SLOT0
+PUT
+DEC * 4
+
+PDEC * 10
+
+LSTART
+    OUT
+    PINC
+    ISZERO
+LEND
+
+PRINTDEBUG
+
+RET
